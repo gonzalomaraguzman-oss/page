@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<!-- saved from url=(0050)https://galomarag-sketch.github.io/calificaciones/ -->
+<html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Calificaciones</title>
+  <style>
+    /* Reset ligero */
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: "Helvetica Neue", Arial, sans-serif; }
+    body { background: #fff; color: #222; padding: 24px; }
+
+    /* Contenedor centrado y con ancho similar a un documento impreso */
+    .page {
+      max-width: 820px;
+      margin: 12px auto;
+      position: relative;
+      min-height: 1120px; /* parecido a una hoja larga */
+      padding: 28px;
+    }
+
+    /* Marca de agua diagonal */
+    .page::before {
+      content: "Este documento no tiene validez oficial";
+      position: absolute;
+      left: -40px;
+      top: 40%;
+      font-size: 40px;
+      color: rgba(180,180,180,0.12);
+      transform: rotate(-28deg);
+      white-space: nowrap;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    header { margin-bottom: 16px; }
+
+    /* Caja de datos del estudiante */
+    .student-card {
+      width: 460px;
+      border: 2px solid #8b0000;
+      z-index: 2;
+      background: #fff;
+      position: relative;
+      box-shadow: 0 1px 0 rgba(0,0,0,0.04);
+    }
+    .student-card .title {
+      background: #8b0000;
+      color: #fff;
+      padding: 10px 12px;
+      font-weight: 700;
+      font-size: 16px;
+      text-align: center;
+    }
+    .student-card .info {
+      padding: 12px;
+      font-size: 13px;
+      line-height: 1.6;
+      color: #111;
+    }
+    .student-card .info .label { color: #555; width: 160px; display:inline-block; font-weight:600; }
+    .student-card .info a { color: #0066cc; text-decoration: none; }
+
+    /* Historial (tabla) */
+    .historial {
+        
+      margin-top: 22px;
+      border-collapse: collapse;
+      width: 100%;
+      z-index: 2;
+      position: relative;
+    }
+    .historial thead th {
+      background: #8b0000;
+      color: #fff;
+      padding: 10px 8px;
+      font-weight: 700;
+      font-size: 14px;
+      border: 1px solid #8b0000;
+      text-align: left;
+    }
+    .historial tbody td {
+      padding: 10px 8px;
+      border: 1px solid #d6d6d6;
+      font-size: 13px;
+      vertical-align: middle;
+    }
+    .historial tbody tr:nth-child(even) { background: #fafafa; }
+
+    /* Caja certificados a la derecha del historial */
+    .right-column {
+      position: sticky;
+      right: auto;
+      top: 160px;
+      width: 160px;
+      z-index: 2;
+    }
+    .cert {
+      border: 2px solid #8b0000;
+      background: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+    .cert .title { background: #8b0000; color: #fff; padding: 6px; font-weight: 700; margin-bottom: 8px; font-size: 13px; }
+    .cert .value { font-size: 18px; font-weight: 700; }
+
+    /* Pie con fecha y lema */
+    footer {
+      margin-top: 36px;
+      text-align: center;
+      z-index: 2;
+      position: relative;
+    }
+    footer .fecha { font-size: 18px; margin-bottom: 6px; }
+    footer .lema { font-weight: 700; font-size: 20px; font-style: italic; }
+
+    /* Layout: coloca student-card sobre la tabla */
+    .top-area {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .page { padding: 16px; min-height: 1400px; }
+      .student-card { width: 100%; }
+      .right-column { position: static; margin-top: 12px; width: 100%; }
+      .historial thead th, .historial tbody td { font-size: 12px; padding: 8px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <!-- zona superior: tarjeta de datos -->
+      <div class="top-area">
+        <div class="student-card" aria-label="Datos del estudiante">
+          <div class="title">Datos del Estudiante</div>
+          <div class="info">
+            <div><span class="label">Nombre</span> RODILES UMAÑA ANA JANETT</div>
+            <div><span class="label">Matrícula</span> <a href="https://galomarag-sketch.github.io/calificaciones/#">24-003-0644</a></div>
+            <div><span class="label">Licenciatura</span> Ciencia Política y Administración Urbana</div>
+            <div><span class="label">Colegio</span> Colegio de Humanidades y Ciencias Sociales</div>
+            <div><span class="label">Plantel</span> San Lorenzo Tezonco</div>
+            <div><span class="label">Clave DGP</span> 601393</div>
+          </div>
+        </div>
+
+        <!-- espacio flexible para que la tabla empiece después -->
+        <div style="flex:1;"></div>
+      </div>
+    </header>
+
+
+    <!-- Historial académico -->
+    <section style="margin-top: 12px;">
+      <table class="historial" aria-label="Historial académico">
+        <thead>
+          <tr>
+            <th style="width:10%;">Clave</th>
+            <th style="width:46%;">Curso</th>
+            <th style="width:8%;">Créditos</th>
+            <th colspan="2"> Evaluación</th>
+            <th style="width:12%;">Período</th>
+            <th style="width:12%;">Estatus</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1-HCS-CH-01</td>
+            <td>Cultura científica y humanística I</td>
+            <td>8</td>
+            <td>8
+                 </td><td>
+                  Ocho
+                </td>
+            
+            <td>Jun 25</td>
+            <td>  </td>
+          </tr>
+          <tr>
+            <td>1-HCS-61</td>
+            <td>Teoría política I</td>
+            <td>8</td>
+            <td>8
+                </td><td>Ocho
+                </td>
+            
+            <td>Jun 25</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>1-HCS-SH-01</td>
+            <td>Estudios sociales e históricos I</td>
+            <td>8</td>
+            <td>8
+                 </td><td>
+                  Ocho
+                </td>
+            
+            <td>Jun 25</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>1-HCS-LE-01</td>
+            <td>Lengua extranjera I: Inglés I</td>
+            <td>8
+            </td><td>
+            8
+            </td>
+            
+            <td>Ocho
+                  </td><td>
+                  Jun 25
+                </td>
+            
+            <td></td>
+          </tr>
+          <tr>
+            <td>1-HCS-LP-01</td>
+            <td>Lenguaje y pensamiento I</td>
+            <td>8</td>
+            <td>8
+                  </td><td>
+                  Ocho
+                </td>
+            
+            <td>Jun 25</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>1-HCS-LE-02</td>
+            <td>Lengua extranjera II: Inglés II</td>
+            <td>8</td>
+            <td>8
+                  </td><td>
+                  Ocho
+                </td>
+            
+            <td>Dic 25</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>1-HCS-LP-02</td>
+            <td>Lenguaje y pensamiento II</td>
+            <td>8</td>
+            <td>9
+                  </td><td>
+                  Nueve
+                </td>
+            
+            <td>Dic 25</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>1-HCS-CH-02</td>
+            <td>Cultura científica y humanística II</td>
+            <td>8</td>
+            <td>9
+                  </td><td>
+                  Nueve
+                </td>
+            
+            <td>Dic 25</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>1-HCS-62</td>
+            <td>Teoría política II</td>
+            <td>8</td>
+            <td>8
+                  </td><td>
+                  Ocho
+                </td>
+            
+            <td>Jun 25</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>1-HCS-SH-02</td>
+            <td>Estudios sociales e históricos II</td>
+            <td>8</td>
+            <td>9
+                  </td><td>
+                  Nueve
+                </td>
+            
+            <td>Jun 25</td>
+            <td></td>
+          </tr>
+           <tr>
+            <td>1-HCS-CH-01</td>
+            <td>Lengua extranjera y pensamiento  III </td>
+            <td>8</td>
+            <td>9
+                 </td><td>
+                  Nueve
+                </td>
+            
+            <td>Jun 26</td>
+            <td>  </td>
+          </tr>
+          <tr>
+            <td>1-HCS-CH-01</td>
+            <td>Estudios sociales e históricos III </td>
+            <td>8</td>
+            <td>9
+                 </td><td>
+                  Nueve
+                </td>
+            
+            <td>Jun 26</td>
+            <td>  </td>
+          </tr>
+          <tr>
+            <td>1-HCS-LE-03</td>
+            <td>Lengua extranjera III  </td>
+            <td>8</td>
+            <td>8
+                 </td><td>
+                  Ocho
+                </td>
+            
+            <td>Jun 26</td>
+            <td>  </td>
+          </tr>
+          <tr>
+            <td>1-HCS-63</td>
+            <td>Teoría política III </td>
+            <td>8</td>
+            <td>8
+                 </td><td>
+                  Ocho
+                </td>
+            
+            <td>Jun 26</td>
+            <td>  </td>
+          </tr>
+          <tr>
+            <td>1-HCS-CH-03</td>
+            <td>Cultura científica y humanistica III</td>
+            <td>8</td>
+            <td>9
+                 </td><td>
+                  Nueve
+                </td>
+            
+            <td>Jun 26</td>
+            <td>  </td>
+          </tr>
+
+          
+          
+        </tbody>
+      </table>
+    </section>
+      <!-- Caja de certificados a la derecha -->
+    <div class="right-column" aria-hidden="true">
+      <div class="cert">
+        <div class="title">Certificados</div>
+        <div> Cursos certificados: </div>
+        <div class="value">15</div>
+      </div>
+    </div>
+
+    <!-- pie con fecha -->
+    <footer>
+      <div class="fecha">Ciudad de México a 11 de diciembre de 2025</div>
+      <div class="lema">"Nada Humano me es Ajeno"</div>
+    </footer>
+  </div>
+
+
+</body></html>
