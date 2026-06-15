@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<!-- saved from url=(0051)https://galomarag-sketch.github.io/web/?user=&pass= -->
+<html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Ingreso al Sistema Institucional</title>
+
+  <!-- Fuente (opcional) -->
+  <link href="./Ingreso al Sistema Institucional_files/css2" rel="stylesheet">
+
+  <style>
+    :root{
+      --maroon:#5b1d2a;
+      --purple:#7a2f7a;
+      --soft-purple:#eadff0;
+      --link-blue:#153db0;
+      --muted:#666;
+      --max-width:520px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:"Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color:#111;
+      background:#fff;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding-bottom:40px;
+    }
+
+    /* Header */
+    .topbar{
+      background:var(--maroon);
+      color:#fff;
+      padding:14px 18px;
+    }
+    .brand{
+      font-weight:700;
+      letter-spacing:0.5px;
+      font-size:20px;
+    }
+    .brand small{
+      display:block;
+      font-weight:300;
+      font-size:11px;
+      opacity:.95;
+      margin-top:4px;
+    }
+
+    /* Main container */
+    .wrap{
+      max-width:var(--max-width);
+      margin:22px auto;
+      padding:0 18px;
+    }
+
+    h1.title{
+      text-align:center;
+      margin:6px 0 22px;
+      font-size:28px;
+      font-weight:700;
+      color:#111;
+    }
+
+    /* Form card (visually simple) */
+    .form{
+      width:100%;
+      padding-bottom:10px;
+    }
+
+    .field{
+      position:relative;
+      margin:20px 0 6px;
+    }
+
+    /* The floating label on top-left of border */
+    .field label{
+      position:absolute;
+      top:-10px;
+      left:12px;
+      background:transparent;
+      padding:0 8px;
+      font-weight:600;
+      color:var(--purple);
+      font-size:15px;
+      transform:translateY(-50%);
+      background:#fff;
+    }
+
+    /* Input style that mimics thick rounded border */
+    .field input[type="text"],
+    .field input[type="password"]{
+      width:100%;
+      display:block;
+      border-radius:18px;
+      padding:18px 16px;
+      font-size:16px;
+      outline:none;
+      background:transparent;
+      box-shadow: none;
+      -webkit-appearance:none;
+      appearance:none;
+    }
+
+    /* Thicker decorative border container to emulate the picture */
+    .input-border{
+      border:3px solid var(--purple);
+      border-radius:18px;
+      padding:4px; /* so label sits over the border */
+    }
+    /* second field border different color (negro/gray) */
+    .input-border.black{
+      border-color:#333;
+    }
+
+    /* Button */
+    .actions{
+      margin:28px 0 10px;
+      text-align:center;
+    }
+    .boton{
+      display:inline-block;
+      padding:12px 36px;
+      border-radius:18px;
+      background:var(--soft-purple);
+      border:3px solid rgba(0,0,0,0.25);
+      box-shadow: 0 6px 0 rgba(0,0,0,0.18);
+      font-weight:600;
+      cursor:pointer;
+      min-width:160px;
+      outline: none;
+      transform: translateY(4px); box-shadow: 0 2px 0 rgba(0,0,0,0.18);c1
+      
+      
+    
+      
+    }
+    .btn:active{ transform: translateY(4px); box-shadow: 0 2px 0 rgba(0,0,0,0.18); }
+
+    /* Links */
+    .links {
+      text-align:center;
+      margin-top:12px;
+      line-height:1.8;
+    }
+    .links a{
+      display:block;
+      color:var(--link-blue);
+      text-decoration:underline;
+      margin:6px 0;
+      font-size:15px;
+    }
+
+    /* Important notice */
+    .notice{
+      margin-top:28px;
+      padding-top:8px;
+      border-top:1px solid #eee;
+    }
+    .notice h2{
+      color:var(--maroon);
+      font-size:20px;
+      text-align:left;
+      margin:14px 0 10px;
+    }
+    .notice p{
+      color:#222;
+      line-height:1.5;
+      font-size:15px;
+    }
+
+    /* Footer small */
+    .footer{
+      margin-top:22px;
+      padding-top:18px;
+      text-align:center;
+      font-size:12px;
+      color:#666;
+    }
+
+    /* Responsive tweaks */
+    @media (max-width:420px){
+      :root{ --max-width:420px; }
+      h1.title{ font-size:24px; }
+      .field label{ font-size:13px; left:10px; }
+    }
+    
+
+    
+  </style>
+</head>
+<body>
+
+  <header class="topbar" role="banner">
+    <div class="wrap" style="padding:0">
+      <div class="brand">UACM
+        <small>Universidad Autónoma de la Ciudad de México</small>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap" role="main">
+    <h1 class="title">Ingreso al Sistema Institucional</h1>
+
+    <form class="form" aria-label="Formulario de ingreso">
+      <!-- Campo 1 -->
+      <div class="field" style="margin-top:6px;">
+        <div class="input-border" aria-hidden="true">
+          <label for="user">Cuenta institucional</label>
+          <input id="user" name="user" type="text" placeholder="" autocomplete="username" aria-describedby="user-desc">
+        </div>
+      </div>
+
+      <!-- Campo 2 -->
+      <div class="field">
+        <div class="input-border black">
+          <label for="pass">Contraseña</label>
+          <input id="pass" name="pass" type="password" placeholder="" autocomplete="current-password">
+        </div>
+      </div>
+
+     
+
+      
+      <div class="boton">
+        <a href="https://gonzalomaraguzman-oss.github.io/page/Calificaciones.html">Siguiente
+        </a>
+        
+
+      </div>
+
+      <div class="links" aria-hidden="false">
+        <a href="https://galomarag-sketch.github.io/web/?user=&amp;pass=#" onclick="event.preventDefault()">No tengo cuenta de correo institucional</a>
+        <a href="https://galomarag-sketch.github.io/web/?user=&amp;pass=#" onclick="event.preventDefault()">No recuerdo mi contraseña</a>
+        <a href="https://galomarag-sketch.github.io/web/?user=&amp;pass=#" onclick="event.preventDefault()">Manual de usuario</a>
+      </div>
+
+      <section class="notice" aria-labelledby="aviso-title">
+        <h2 id="aviso-title">Aviso importante</h2>
+        <p>
+          La contraseña para el acceso a su cuenta institucional es personal e intransferible, no debe compartirla con nadie, ni siquiera con el personal de la Coordinación de Informática y Telecomunicaciones. Es responsabilidad de cada usuario el manejo de la cuenta.
+        </p>
+      </section>
+
+      <div class="footer">
+        Coordinación de Informática y Telecomunicaciones<br>
+        Ingeniería y Desarrollo de Sistemas — <strong>2025</strong>
+      </div>
+    </form>
+  </main>
+
+
+
+</body></html>
